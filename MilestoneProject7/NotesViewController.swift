@@ -8,26 +8,48 @@
 
 import UIKit
 
-class ViewController: UITableViewController, UINavigationControllerDelegate {
+class NotesViewController: UITableViewController, UINavigationControllerDelegate {
+    var folder: Folder!
     var notes = [Note]()
-
+    weak var delegate: FoldersViewController!
+    var countButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.delegate = self
 
-        title = "Notes" // set the title
         navigationController?.navigationBar.prefersLargeTitles = true // big titles
 
         load()
-        if notes.count == 0 {
-            notes.append(Note(text: "Hello",
-                              dateCreated: Date()))
-        }
+//        if notes.count == 0 {
+//            notes.append(Note(text: "Hello",
+//                              dateCreated: Date()))
+//        }
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
+        title = folder.name
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
                                                             target: self,
-                                                            action: #selector(addNote))
+                                                            action: #selector(editList))
+        
+        
+        let addNoteButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(addNote))
+        let spacerButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        
+        countButton = UIBarButtonItem(title: "\(notes.count) notes", style: .plain, target: nil, action: nil)
+        countButton.isEnabled = false
+        
+        navigationController?.isToolbarHidden = false
+        
+        toolbarItems = [spacerButton, countButton, spacerButton, addNoteButton]
+        
+        tableView.allowsMultipleSelectionDuringEditing = true
+        
+        
+    }
+
+    @objc func editList(){
+        
     }
 
     func navigationController(_ navigationController: UINavigationController,
@@ -61,11 +83,15 @@ class ViewController: UITableViewController, UINavigationControllerDelegate {
         return paths[0]
     }
 
-    func save() {
+    @objc func save() {
+        print(self, "save()")
         let jsonEncoder = JSONEncoder()
         if let savedData = try? jsonEncoder.encode(notes) {
             let defaults = UserDefaults.standard
-            defaults.set(savedData, forKey: "notes")
+            defaults.set(savedData, forKey: "\(folder.name)-notes")
+            folder.noteCount = notes.count
+            countButton.title = "\(notes.count) notes"
+            delegate.save()
             tableView.reloadData()
         } else {
             print("Failed to save notes.")
@@ -74,7 +100,7 @@ class ViewController: UITableViewController, UINavigationControllerDelegate {
 
     func load() {
         let defaults = UserDefaults.standard
-        if let savedNotes = defaults.object(forKey: "notes") as? Data {
+        if let savedNotes = defaults.object(forKey: "\(folder.name)-notes") as? Data {
             let jsonDecoder = JSONDecoder()
             do {
                 notes = try jsonDecoder.decode([Note].self, from: savedNotes)
@@ -105,7 +131,7 @@ class ViewController: UITableViewController, UINavigationControllerDelegate {
     // This class is the data source.
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Note",
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell",
                                                  for: indexPath)
 
         /*  Swift lets us use a question mark – textLabel? –
@@ -131,5 +157,21 @@ class ViewController: UITableViewController, UINavigationControllerDelegate {
                                                      animated: true)
         }
     }
+
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            notes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath],
+                                 with: .fade)
+            perform(#selector(save), with: nil, afterDelay: 1) //HACK
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+ 
 }
 

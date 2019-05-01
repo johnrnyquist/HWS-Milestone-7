@@ -12,7 +12,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet var textView: UITextView!
     var note: Note!
-    weak var delegate: ViewController!
+    weak var delegate: NotesViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
