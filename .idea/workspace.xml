@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66cec640-e5f8-4d2a-ae2b-324ea6a79d1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-40.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Base.lproj/Main.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Folder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Folder.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Note.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Note.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" afterDir="false" />
-    </list>
+    <list default="true" id="66cec640-e5f8-4d2a-ae2b-324ea6a79d1f" name="Default Changelist" comment="" />
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/MilestoneProject7-dogubrzcqpcdingmxvuwqhqofgqw/Build/Intermediates.noindex/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +27,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MilestoneProject7/Folder.swift">
+        <entry file="file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="345">
+              <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -150,18 +138,27 @@
       <workItem from="1556571050647" duration="2008000" />
       <workItem from="1556716236290" duration="1058000" />
       <workItem from="1556717805756" duration="3324000" />
-      <workItem from="1556723564791" duration="7019000" />
+      <workItem from="1556723564791" duration="7278000" />
     </task>
+    <task id="LOCAL-00001" summary="Adding more delete functionality, refactoring, cleanup.">
+      <created>1556735483691</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556735483691</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20190000" />
+    <option name="totallyTimeSpent" value="20449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49868765" visible="true" weight="0.19742489" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49868765" visible="true" weight="0.19742489" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -170,19 +167,19 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32939634" />
       <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939634" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32939634" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39895013" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="0" sideWeight="0.5013123" side_tool="true" visible="true" weight="0.22174536" />
+      <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="0" sideWeight="0.50097847" side_tool="true" visible="true" weight="0.22174536" />
       <window_info anchor="right" id="Learn" order="1" />
       <window_info anchor="right" id="Database" order="2" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
-      <window_info anchor="right" id="Structure" order="7" sideWeight="0.49868765" visible="true" weight="0.22174536" />
+      <window_info anchor="right" id="Structure" order="7" sideWeight="0.49902153" visible="true" weight="0.22174536" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
@@ -212,6 +209,39 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Adding more delete functionality, refactoring, cleanup." />
+    <MESSAGE value="Workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -256,13 +286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -295,6 +318,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
