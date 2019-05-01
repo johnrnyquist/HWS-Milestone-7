@@ -2,34 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cec640-e5f8-4d2a-ae2b-324ea6a79d1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-60@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-72@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-76@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-83.5@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-40@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-40@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-50@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/iTunesArtwork@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Folder.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Section.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iOS App Icon Notes.afdesign" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Base.lproj/Main.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-72@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-50.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MilestoneProject7/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/MilestoneProject7-dogubrzcqpcdingmxvuwqhqofgqw/Build/Intermediates.noindex/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+            <state relative-caret-position="346">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
         </entry>
@@ -102,7 +83,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -119,6 +99,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,16 +144,16 @@
       <workItem from="1556457173981" duration="2241000" />
       <workItem from="1556571050647" duration="2008000" />
       <workItem from="1556716236290" duration="1058000" />
-      <workItem from="1556717805756" duration="2805000" />
+      <workItem from="1556717805756" duration="3324000" />
+      <workItem from="1556723564791" duration="598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12652000" />
+    <option name="totallyTimeSpent" value="13769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49868765" visible="true" weight="0.19742489" />
@@ -307,8 +288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+        <state relative-caret-position="346">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
         </state>
       </provider>
     </entry>

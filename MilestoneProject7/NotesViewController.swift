@@ -55,20 +55,20 @@ class NotesViewController: UITableViewController, UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController,
                               willShow viewController: UIViewController,
                               animated: Bool) {
-        print("willShow", viewController.restorationIdentifier)
+        print("willShow", viewController.restorationIdentifier!)
     }
 
     func navigationController(_ navigationController: UINavigationController,
                               didShow viewController: UIViewController,
                               animated: Bool) {
-        print("didShow", viewController.restorationIdentifier)
+        print("didShow", viewController.restorationIdentifier!)
     }
 
     func navigationController(_ navigationController: UINavigationController,
                               animationControllerFor operation: UINavigationController.Operation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        print(fromVC.restorationIdentifier, toVC.restorationIdentifier)
+        print(fromVC.restorationIdentifier!, toVC.restorationIdentifier!)
 //        if fromVC.restorationIdentifier == "DetailViewController" {
 //            save()
 //            tableView.reloadData()
