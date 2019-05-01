@@ -16,6 +16,7 @@ class NotesViewController: UITableViewController, UINavigationControllerDelegate
     weak var delegate: FoldersViewController!
     var countButton: UIBarButtonItem!
     var deleteButton: UIBarButtonItem!
+    var swipedToDelete = false
 
 
     func getDocumentsDirectory() -> URL {
@@ -128,9 +129,23 @@ class NotesViewController: UITableViewController, UINavigationControllerDelegate
 
     }
 
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-        tableView.setEditing(tableView.isEditing, animated: true)
+    override func tableView(_ tableView: UITableView,
+                            willBeginEditingRowAt indexPath: IndexPath) {
+        // tableView.isEditing is false
+        swipedToDelete = true
+        super.tableView(tableView,
+                        willBeginEditingRowAt: indexPath) // setEditing(true) will get called
+        // tableView.isEditing is true
+        swipedToDelete = false
+    }
+
+    override func setEditing(_ editing: Bool,
+                             animated: Bool) {
+        // tableView.isEditing is false
+        super.setEditing(editing,
+                         animated: true)
+        // tableView.isEditing is true
+        guard swipedToDelete == false else { return }
         deleteButton.isEnabled.toggle()
     }
 

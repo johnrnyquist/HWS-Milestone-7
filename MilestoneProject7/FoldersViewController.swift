@@ -151,7 +151,6 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
 
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
-        tableView.setEditing(tableView.isEditing, animated: true)
         addFolderButton.isEnabled.toggle()
         deleteButton.isEnabled.toggle()
     }
