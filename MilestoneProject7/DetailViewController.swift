@@ -10,26 +10,15 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextViewDelegate {
 
+    //MARK:- DetailViewController class
+
+    //MARK: Variables
     @IBOutlet var textView: UITextView!
     var note: Note!
     weak var delegate: NotesViewController!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        navigationItem.largeTitleDisplayMode = .never // small titles
-
-        textView.delegate = self
-        textView.text = note.text
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-    }
-
-
+    //MARK: Methods
     @objc func shareTapped() {
         let vc = UIActivityViewController(activityItems: [note.text], applicationActivities: [])
 
@@ -41,10 +30,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         present(vc, animated: true)
     }
 
-    func textViewDidEndEditing(_ textView: UITextView) {
-        note.text = textView.text
-        delegate.save()
-    }
 
     /*
     Receives a parameter that is of type Notification.
@@ -115,4 +100,25 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         textView.scrollRangeToVisible(selectedRange)
     }
 
+    //MARK:- UIViewController class
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        navigationItem.largeTitleDisplayMode = .never // small titles
+
+        textView.delegate = self
+        textView.text = note.text
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+    //MARK:- UITextViewDelegate protocol
+    func textViewDidEndEditing(_ textView: UITextView) {
+        note.text = textView.text
+        delegate.saveNotes()
+    }
 }

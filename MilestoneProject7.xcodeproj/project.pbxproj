@@ -70,11 +70,11 @@
 				8D60AABB2273BFB300E4320D /* DetailViewController.swift */,
 				8D60AABD2273C28500E4320D /* Note.swift */,
 				8DFA403B2275E1D700933E85 /* Folder.swift */,
+				9313938D0F0F9B028D57B2E7 /* Section.swift */,
 				8D60AAAD2273BF0D00E4320D /* Main.storyboard */,
 				8D60AAB02273BF0E00E4320D /* Assets.xcassets */,
 				8D60AAB22273BF0E00E4320D /* LaunchScreen.storyboard */,
 				8D60AAB52273BF0E00E4320D /* Info.plist */,
-				9313938D0F0F9B028D57B2E7 /* Section.swift */,
 			);
 			path = MilestoneProject7;
 			sourceTree = "<group>";

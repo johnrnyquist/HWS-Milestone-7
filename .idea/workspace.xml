@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cec640-e5f8-4d2a-ae2b-324ea6a79d1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/iOS App Icon Notes.afdesign" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-40.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-72@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Assets.xcassets/AppIcon.appiconset/Icon-Small-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Folder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Folder.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MilestoneProject7/Note.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/Note.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/MilestoneProject7-dogubrzcqpcdingmxvuwqhqofgqw/Build/Intermediates.noindex/" />
@@ -37,10 +39,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift">
+        <entry file="file://$PROJECT_DIR$/MilestoneProject7/Folder.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
+            <state relative-caret-position="396">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -51,6 +53,7 @@
     <findStrings>
       <find>NotesViewController</find>
       <find>edit</find>
+      <find>delet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -59,13 +62,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MilestoneProject7/Note.swift" />
-        <option value="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" />
         <option value="$PROJECT_DIR$/MilestoneProject7/ViewController.swift" />
         <option value="$PROJECT_DIR$/MilestoneProject7/FolderViewController.swift" />
         <option value="$PROJECT_DIR$/MilestoneProject7/Section.swift" />
         <option value="$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift" />
         <option value="$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift" />
+        <option value="$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift" />
+        <option value="$PROJECT_DIR$/MilestoneProject7/Note.swift" />
+        <option value="$PROJECT_DIR$/MilestoneProject7/Folder.swift" />
       </list>
     </option>
   </component>
@@ -77,6 +81,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <showMembers ProjectPane="true" />
       <sortByType ProjectPane="true" />
       <manualOrder ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
@@ -145,12 +150,12 @@
       <workItem from="1556571050647" duration="2008000" />
       <workItem from="1556716236290" duration="1058000" />
       <workItem from="1556717805756" duration="3324000" />
-      <workItem from="1556723564791" duration="598000" />
+      <workItem from="1556723564791" duration="7019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13769000" />
+    <option name="totallyTimeSpent" value="20190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -158,48 +163,51 @@
       <window_info id="Designer" order="0" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49868765" visible="true" weight="0.19742489" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="Structure" order="3" sideWeight="0.5013123" weight="0.26752505" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32939634" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32939634" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939634" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39895013" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="right" id="Learn" order="0" />
-      <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="0" sideWeight="0.5013123" side_tool="true" visible="true" weight="0.22174536" />
+      <window_info anchor="right" id="Learn" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Structure" order="7" sideWeight="0.49868765" visible="true" weight="0.22174536" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.24964234" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49868765" weight="0.19742489" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Structure" order="3" sideWeight="0.5013123" visible="true" weight="0.26752505" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32939634" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32939634" />
       <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939634" />
+      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.39895013" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Learn" order="0" />
-      <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="0" side_tool="true" weight="0.1988555" />
+      <window_info anchor="right" id="Learn" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,43 +216,19 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift</url>
-          <line>80</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift</url>
-          <line>138</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift</url>
-          <line>164</line>
+          <line>177</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MilestoneProject7/Note.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/AppCode2019.1/ModuleCache/10E1001/5.0.1/x86_64/iphonesimulator12.2/UIKit.UIViewControllerTransitioning/UIKit.UIViewControllerTransitioning.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="152" column="16" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -258,17 +242,45 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MilestoneProject7/FolderViewController.swift" />
-    <entry file="file://$PROJECT_DIR$/MilestoneProject7/AppDelegate.swift">
+    <entry file="file://$USER_HOME$/Library/Caches/AppCode2019.1/ModuleCache/10E1001/5.0.1/x86_64/iphonesimulator12.2/UIKit.UIViewController/UIKit.UIViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
+          <caret line="491" column="13" selection-start-line="491" selection-start-column="13" selection-end-line="491" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MilestoneProject7/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MilestoneProject7/Folder.swift">
+    <entry file="file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" lean-forward="true" selection-end-line="24" />
+        <state relative-caret-position="201">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MilestoneProject7/DetailViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MilestoneProject7/Note.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -279,17 +291,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MilestoneProject7/FoldersViewController.swift">
+    <entry file="file://$PROJECT_DIR$/MilestoneProject7/Folder.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="160" column="18" selection-start-line="160" selection-start-column="18" selection-end-line="160" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MilestoneProject7/NotesViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="396">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
         </state>
       </provider>
     </entry>

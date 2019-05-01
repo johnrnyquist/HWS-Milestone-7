@@ -7,49 +7,19 @@
 //
 
 import UIKit
-enum Sections {
-    case icloud, local
-}
+
+
 class FoldersViewController: UITableViewController, UINavigationControllerDelegate {
+
+    //MARK:- FoldersViewController
+    //MARK: Variables
     var sections: [Section] = []
+    var addFolderButton: UIBarButtonItem!
+    var deleteButton: UIBarButtonItem!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //MARK: Methods
 
-        sections.append(Section(name: "iCloud", folders: [Folder]()))
-        sections.append(Section(name: "On My iPhone", folders: [Folder]()))
-
-        navigationController?.delegate = self
-
-        title = "Folders" // set the title
-        navigationController?.navigationBar.prefersLargeTitles = true // big titles
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
-                                                            target: self,
-                                                            action: #selector(editList))
-        load()
-//        if folders.count == 0 {
-//            folders.append(Folder(name: "Hello",
-//                                  noteCount: 0,
-//                                  dateCreated: Date()))
-//            tableView.reloadData()
-//        }
-
-        self.clearsSelectionOnViewWillAppear = false
-        navigationController?.isToolbarHidden = false
-        let addFolderButton = UIBarButtonItem(title: "New Folder",
-                                              style: .plain,
-                                              target: self,
-                                              action: #selector(newFolderTapped))
-        let spacerButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                           target: self,
-                                           action: nil)
-        toolbarItems = [spacerButton, addFolderButton]
-    }
-
-    @objc func editList() {
-    }
-
-    @objc func newFolderTapped() {
+    @objc func addFolderTapped() {
         let ac = UIAlertController(title: "New Folder",
                                    message: "Where would you like to add this folder?",
                                    preferredStyle: .actionSheet)
@@ -68,9 +38,21 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
                 animated: true)
     }
 
+    @objc func deleteItems() {
+        if let rows = tableView.indexPathsForSelectedRows {
+            for indexPath in rows {
+                sections[indexPath.section].folders.remove(at: indexPath.row)
+            }
+            tableView.beginUpdates()
+            tableView.deleteRows(at: rows, with: .automatic)
+            tableView.endUpdates()
+            saveSections()
+        }
+        isEditing = false
+        deleteButton.isEnabled = false
+    }
+
     func addFolder(addAction: UIAlertAction) {
-        print("addFolder",
-              addAction.title!)
 
         let ac = UIAlertController(title: "Add Folder",
                                    message: "Name the new folder",
@@ -89,7 +71,7 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
             selectedSection.folders.append(Folder(name: answer.text!,
                                                  noteCount: 0,
                                                  dateCreated: Date()))
-            self.save()
+            self.saveSections()
         }
         ac.addAction(submitAction)
         present(ac,
@@ -99,11 +81,11 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
 
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory,
-                                             in: .userDomainMask)
-        return paths[0]
+                                                    in: .userDomainMask)
+        return paths.first!
     }
 
-    func save() {
+    func saveSections() {
         let jsonEncoder = JSONEncoder()
         if let savedData = try? jsonEncoder.encode(sections) {
             let defaults = UserDefaults.standard
@@ -115,7 +97,7 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
         }
     }
 
-    func load() {
+    func loadSections() {
         let defaults = UserDefaults.standard
         if let savedFolders = defaults.object(forKey: "allsections") as? Data {
             let jsonDecoder = JSONDecoder()
@@ -129,7 +111,53 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
     }
 
 
-    // MARK: - Table view data source
+    //MARK:- UIViewController class
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        sections.append(Section(name: "iCloud", folders: [Folder]()))
+        sections.append(Section(name: "On My iPhone", folders: [Folder]()))
+
+        navigationController?.delegate = self
+
+        title = "Folders" // set the title
+        navigationController?.isToolbarHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true // big titles
+
+        addFolderButton = UIBarButtonItem(title: "New Folder",
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(addFolderTapped))
+        let spacerButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                           target: self,
+                                           action: nil)
+        toolbarItems = [spacerButton, addFolderButton]
+
+
+        deleteButton = UIBarButtonItem(title: "Delete",
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(deleteItems))
+        navigationItem.rightBarButtonItems = [editButtonItem, deleteButton]
+        deleteButton.isEnabled = false
+
+        clearsSelectionOnViewWillAppear = false
+
+        //IMPORTANT: Below is how we get the checkboxes when isEditing
+        tableView.allowsMultipleSelectionDuringEditing = true
+
+        loadSections()
+    }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        tableView.setEditing(tableView.isEditing, animated: true)
+        addFolderButton.isEnabled.toggle()
+        deleteButton.isEnabled.toggle()
+    }
+
+
+    // MARK:- UITableViewDataSource protocol
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -155,11 +183,11 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
         return cell
     }
 
+
     //MARK: - UITableViewDelegate protocol
-    // Tells the delegate that the specified row is now selected.
-    // This class is the delegate.
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
+        guard isEditing == false else { return }
         if let notesView = storyboard?.instantiateViewController(withIdentifier: "NotesViewController") as? NotesViewController {
             let folder = sections[indexPath.section].folders[indexPath.row]
             notesView.folder = folder
@@ -169,49 +197,4 @@ class FoldersViewController: UITableViewController, UINavigationControllerDelega
                                                      animated: true)
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCell.EditingStyle,
-                            forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView,
-                            moveRowAt fromIndexPath: IndexPath,
-                            to: IndexPath) {
-
-    }
-    */
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

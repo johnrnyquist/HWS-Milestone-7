@@ -9,49 +9,68 @@
 import UIKit
 
 class NotesViewController: UITableViewController, UINavigationControllerDelegate {
+
+    //MARK:- NotesViewController class
     var folder: Folder!
     var notes = [Note]()
     weak var delegate: FoldersViewController!
     var countButton: UIBarButtonItem!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var deleteButton: UIBarButtonItem!
 
-        navigationController?.delegate = self
 
-        navigationController?.navigationBar.prefersLargeTitles = true // big titles
-
-        load()
-//        if notes.count == 0 {
-//            notes.append(Note(text: "Hello",
-//                              dateCreated: Date()))
-//        }
-
-        title = folder.name
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
-                                                            target: self,
-                                                            action: #selector(editList))
-        
-        
-        let addNoteButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(addNote))
-        let spacerButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        
-        countButton = UIBarButtonItem(title: "\(notes.count) notes", style: .plain, target: nil, action: nil)
-        countButton.isEnabled = false
-        
-        navigationController?.isToolbarHidden = false
-        
-        toolbarItems = [spacerButton, countButton, spacerButton, addNoteButton]
-        
-        tableView.allowsMultipleSelectionDuringEditing = true
-        
-        
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 
-    @objc func editList(){
-        
+    @objc func saveNotes() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(notes) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "\(folder.name)-notes")
+            folder.noteCount = notes.count
+            countButton.title = "\(notes.count) notes"
+            delegate.saveSections()
+            tableView.reloadData()
+        } else {
+            print("Failed to save notes.")
+        }
     }
 
+    func loadSavedNotes() {
+        let defaults = UserDefaults.standard
+        if let savedNotes = defaults.object(forKey: "\(folder.name)-notes") as? Data {
+            let jsonDecoder = JSONDecoder()
+            do {
+                notes = try jsonDecoder.decode([Note].self, from: savedNotes)
+            } catch {
+                print("Failed to load notes.")
+            }
+        }
+    }
+
+    @objc func addNote() {
+        notes.insert(Note(text: "New Note", dateCreated: Date()), at: 0)
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        saveNotes()
+    }
+
+    @objc func deleteItems() {
+        if let rows = tableView.indexPathsForSelectedRows {
+            for indexPath in rows {
+                notes.remove(at: indexPath.row)
+            }
+            tableView.beginUpdates()
+            tableView.deleteRows(at: rows, with: .automatic)
+            tableView.endUpdates()
+            saveNotes()
+        }
+        isEditing = false
+        deleteButton.isEnabled = false
+    }
+
+    //MARK:- UINavigationControllerDelegate protocol
     func navigationController(_ navigationController: UINavigationController,
                               willShow viewController: UIViewController,
                               animated: Bool) {
@@ -69,55 +88,51 @@ class NotesViewController: UITableViewController, UINavigationControllerDelegate
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         print(fromVC.restorationIdentifier!, toVC.restorationIdentifier!)
-//        if fromVC.restorationIdentifier == "DetailViewController" {
-//            save()
-//            tableView.reloadData()
-//        }
         return nil
     }
 
-    //MARK: - ViewController class
 
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
+
+
+    //MARK:- UIViewController class
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        navigationController?.delegate = self
+        navigationController?.navigationBar.prefersLargeTitles = true // big titles
+        navigationController?.isToolbarHidden = false
+
+        let addNoteButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(addNote))
+        let spacerButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+
+        countButton = UIBarButtonItem(title: "\(notes.count) notes", style: .plain, target: nil, action: nil)
+        countButton.isEnabled = false
+
+        toolbarItems = [spacerButton, countButton, spacerButton, addNoteButton]
+
+        loadSavedNotes()
+
+        title = folder.name
+
+        deleteButton = UIBarButtonItem(title: "Delete",
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(deleteItems))
+        navigationItem.rightBarButtonItems = [editButtonItem, deleteButton]
+        deleteButton.isEnabled = false
+
+        clearsSelectionOnViewWillAppear = false
+
+        //IMPORTANT: Below is how we get the checkboxes when isEditing
+        tableView.allowsMultipleSelectionDuringEditing = true
+
     }
 
-    @objc func save() {
-        print(self, "save()")
-        let jsonEncoder = JSONEncoder()
-        if let savedData = try? jsonEncoder.encode(notes) {
-            let defaults = UserDefaults.standard
-            defaults.set(savedData, forKey: "\(folder.name)-notes")
-            folder.noteCount = notes.count
-            countButton.title = "\(notes.count) notes"
-            delegate.save()
-            tableView.reloadData()
-        } else {
-            print("Failed to save notes.")
-        }
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        tableView.setEditing(tableView.isEditing, animated: true)
+        deleteButton.isEnabled.toggle()
     }
-
-    func load() {
-        let defaults = UserDefaults.standard
-        if let savedNotes = defaults.object(forKey: "\(folder.name)-notes") as? Data {
-            let jsonDecoder = JSONDecoder()
-            do {
-                notes = try jsonDecoder.decode([Note].self, from: savedNotes)
-            } catch {
-                print("Failed to load notes.")
-            }
-        }
-    }
-
-    @objc func addNote() {
-        print("addNote")
-        notes.insert(Note(text: "New Note", dateCreated: Date()), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
-        save()
-    }
-
 
     //MARK: - UITableViewDataSource protocol
     // Tells the data source to return the number of rows in a given section of a table view.
@@ -149,6 +164,8 @@ class NotesViewController: UITableViewController, UINavigationControllerDelegate
     // This class is the delegate.
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
+        guard isEditing == false else { return }
+
         if let detailView = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailView.note = notes[indexPath.row]
             detailView.delegate = self
@@ -167,7 +184,7 @@ class NotesViewController: UITableViewController, UINavigationControllerDelegate
             notes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath],
                                  with: .fade)
-            perform(#selector(save), with: nil, afterDelay: 1) //HACK
+            perform(#selector(saveNotes), with: nil, afterDelay: 1) //HACK
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }

@@ -20,5 +20,4 @@ class Folder: NSObject, Codable {
         self.noteCount = noteCount
         self.dateCreated = dateCreated
     }
-    
 }

@@ -17,5 +17,4 @@ class Note: NSObject, Codable {
         self.text = text
         self.dateCreated = dateCreated
     }
-
 }
